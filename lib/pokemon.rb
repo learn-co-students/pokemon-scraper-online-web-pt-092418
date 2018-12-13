@@ -14,8 +14,15 @@ def initialize(id)
   end
 
   def self.find(id, db)
-   results =  db.execute("SELECT name, type FROM pokemon WHERE id = ?", id)
-   self.new(results)
+   all_results =  db.execute("SELECT id, name, type FROM pokemon WHERE id = ?", id)
+   first_result = all_results[0]
+   first_result_id = first_result[0]
+   first_result_name = first_result[1]
+   first_result_type = first_result[2]
+   pokemon = self.new(first_result_id)
+   pokemon.name = first_result_name
+   pokemon.type = first_result_type
+   pokemon
   end
 
 end
