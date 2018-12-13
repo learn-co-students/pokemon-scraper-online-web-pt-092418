@@ -19,7 +19,7 @@ describe "Pokemon" do
     end
   end
 
-  describe ".save" do
+ describe ".save" do
     it 'saves an instance of a pokemon with the correct id' do
       Pokemon.save("Pikachu", "electric", @db)
 
