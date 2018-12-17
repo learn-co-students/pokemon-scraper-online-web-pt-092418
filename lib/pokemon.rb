@@ -1,6 +1,6 @@
 require 'pry'
 class Pokemon
-  attr_accessor :id, :name, :type, :db
+  attr_accessor :id, :name, :type, :db, :hp
 
   @@all = []
 
@@ -9,6 +9,7 @@ class Pokemon
     @name = pokemon[:name]
     @type = pokemon[:type]
     @db = pokemon[:db]
+    @hp = 60
     @@all << self
     pokemon
   end
