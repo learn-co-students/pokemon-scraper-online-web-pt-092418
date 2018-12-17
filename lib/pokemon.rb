@@ -9,7 +9,6 @@ class Pokemon
     @name = pokemon[:name]
     @type = pokemon[:type]
     @db = pokemon[:db]
-    @hp = 60
     @@all << self
     pokemon
   end
@@ -29,8 +28,5 @@ class Pokemon
     newPokemon = Pokemon.new(pokemonhash)
   end
 
-  def alter_hp(hp, database)
-    database.execute("UPDATE pokemon SET hp = (?) WHERE id = (?)", hp, self.id)
-  end
 
 end
